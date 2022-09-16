@@ -17,7 +17,6 @@ const Colaborador = ({ colaboradores, setColaboradores }) => {
       return alert("Debes llenar los campos");
     }
     setColaboradores([...colaboradores, nuevoColaborador]);
-    console.log(colaboradores);
     setNombre("");
     setCorreo("");
     document.getElementById("nombre").focus();
