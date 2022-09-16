@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const Colaborador = ({ colaboradores, setColaboradores }) => {
   const [nombre, setNombre] = useState("");
   const [correo, setCorreo] = useState("");
-  // controladores de evento
+  // manejadores de evento
   const handleOnChangeNombre = (event) => setNombre(event.target.value);
   const handleOnChangeCorreo = (event) => setCorreo(event.target.value);
   const handleOnSubmit = (event) => {
@@ -13,9 +13,6 @@ const Colaborador = ({ colaboradores, setColaboradores }) => {
       nombre: nombre,
       correo: correo,
     };
-    if (!nombre || !correo) {
-      return alert("Debes llenar los campos");
-    }
     setColaboradores([...colaboradores, nuevoColaborador]);
     setNombre("");
     setCorreo("");
@@ -50,9 +47,10 @@ const Colaborador = ({ colaboradores, setColaboradores }) => {
           />
           <label htmlFor="correo">Correo electrónico</label>
         </div>
-        <button type="submit" className="w-100 btn btn-primary">
-          Agregar
-        </button>
+      { nombre.length && correo.length >= 5 
+        ? <button type="submit" id="btn-submit" className="w-100 btn btn-primary">Agregar</button>
+        : <div className="form-text text-danger">Introduce ambos campos para habilitar el botón de agregar nuevo colaborador (mínimo de caracteres 5)</div>
+      }
       </form>
     </div>
   );
