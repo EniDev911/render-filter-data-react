@@ -23,13 +23,13 @@ function App() {
     <div className="App">
       <BuscarColaborador
         setBusqueda={setBusqueda} />
-
       <Colaborador colaboradores={colaboradores} setColaboradores={setColaboradores} />
+      <h2 className="text-uppercase">Listado de colaboradores 👤</h2>
       <ul>
         {resultados.map(colaborador =>
           <li
             key={colaborador.id.toString()}
-            className="bg-primary mb-2 rounded text-light p-1">
+            className="bg-primary mb-2 rounded text-light p-1 fs-4">
             {colaborador.nombre.toLowerCase()} - {colaborador.correo}
           </li>
         )}
