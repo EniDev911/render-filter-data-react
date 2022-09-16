@@ -12,7 +12,7 @@ const ListadoColaborador = ({colaboradores}) => {
             {colaboradores.map((colaborador) => (
               <li
                 key={colaborador.id.toString()}
-                className="bg-light bg-gradient mb-2 rounded p-1 fs-4 border border-secondary"
+                className="bg-light bg-gradient mb-2 rounded p-1 fs-5 border border-secondary"
               >
                 🙍‍♂️ {colaborador.nombre.toLowerCase()} <br /> 📧{" "}
                 {colaborador.correo}
