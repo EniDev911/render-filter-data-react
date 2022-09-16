@@ -13,6 +13,9 @@ const Colaborador = ({colaboradores, setColaboradores}) => {
       nombre: nombre,
       correo: correo
     }
+    if(!nombre || !correo){
+      return alert("Debes llenar los campos");
+    }
     setColaboradores([...colaboradores, nuevoColaborador]);
     console.log(colaboradores);
     setNombre("");
