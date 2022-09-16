@@ -15,3 +15,4 @@ export const BaseColaboradores = [
     correo: "colaborador3@colaborador3.com"
   },
 ]
+

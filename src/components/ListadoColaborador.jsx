@@ -14,7 +14,7 @@ const ListadoColaborador = ({colaboradores}) => {
                 key={colaborador.id.toString()}
                 className="bg-light bg-gradient mb-2 rounded p-1 fs-5 border border-secondary"
               >
-                🙍‍♂️ {colaborador.nombre.toLowerCase()} <br /> 📧{" "}
+                🙍‍♂️ {colaborador.nombre.toLowerCase()} <br /> 📧
                 {colaborador.correo}
               </li>
             ))}
