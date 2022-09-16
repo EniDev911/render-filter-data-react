@@ -23,10 +23,9 @@ const Colaborador = ({colaboradores, setColaboradores}) => {
   }
 
   return (
-    <form className="mb-4 p-3 border border-3 border-info rounded text-start"
+    <form className="mb-4 p-3 border border-1 border-secondary rounded text-start"
           onSubmit={handleOnSubmit}>
-      <div className="mb-2">
-        <label htmlFor="nombre" className="mb-1">Nombre del colaborador</label>
+      <div className="mb-3 form-floating">
         <input
           name="nombre"
           type="text"
@@ -35,9 +34,9 @@ const Colaborador = ({colaboradores, setColaboradores}) => {
           placeholder="Nombre colaborador"
           onChange={handleOnChangeNombre}
         />
+        <label htmlFor="nombre">Nombre del colaborador</label>
       </div>
-      <div className="mb-3">
-        <label htmlFor="correo" className="mb-1">Correo del colaborador</label>
+      <div className="mb-3 form-floating">
         <input 
           type="email" 
           name="correo"
@@ -46,6 +45,7 @@ const Colaborador = ({colaboradores, setColaboradores}) => {
           placeholder="Correo colaborador" 
           onChange={handleOnChangeCorreo}
           />
+        <label htmlFor="correo">Correo electrónico</label>
       </div>
       <button type="submit" className="w-100 btn btn-primary">Agregar</button>
     </form>

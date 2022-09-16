@@ -23,17 +23,23 @@ function App() {
     <div className="App">
       <BuscarColaborador
         setBusqueda={setBusqueda} />
-      <Colaborador colaboradores={colaboradores} setColaboradores={setColaboradores} />
-      <h2 className="text-uppercase">Listado de colaboradores 👤</h2>
-      <ul>
-        {resultados.map(colaborador =>
-          <li
-            key={colaborador.id.toString()}
-            className="bg-primary mb-2 rounded text-light p-1 fs-4">
-            {colaborador.nombre.toLowerCase()} - {colaborador.correo}
-          </li>
-        )}
-      </ul>
+      <div className="container row mx-auto">
+        <div className="col-10 col-md-6 col-lg-4 mx-auto">
+          <Colaborador colaboradores={colaboradores} setColaboradores={setColaboradores} />
+        </div>
+        <div className="col-10 col-md-5 col-lg-8 mx-auto">
+          <h2 className="text-uppercase bg-secondary p-2 m-0 text-light">Listado de colaboradores</h2>
+          <ul className="border border-1 border-secondary p-2">
+            {resultados.map(colaborador =>
+              <li
+                key={colaborador.id.toString()}
+                className="bg-dark bg-gradient mb-2 rounded text-light p-1 fs-4">
+                🙍‍♂️ {colaborador.nombre.toLowerCase()} <br /> 📧 {colaborador.correo}
+              </li>
+            )}
+          </ul>
+        </div>
+      </div>
     </div>
   );
 }
