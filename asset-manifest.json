@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/render-filter-data-react/static/css/main.b30985fa.css",
+    "main.js": "/render-filter-data-react/static/js/main.f761be19.js",
+    "index.html": "/render-filter-data-react/index.html",
+    "main.b30985fa.css.map": "/render-filter-data-react/static/css/main.b30985fa.css.map",
+    "main.f761be19.js.map": "/render-filter-data-react/static/js/main.f761be19.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b30985fa.css",
+    "static/js/main.f761be19.js"
+  ]
+}
