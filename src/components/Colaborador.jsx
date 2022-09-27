@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const Colaborador = ({ colaboradores, setColaboradores }) => {
   const [nombre, setNombre] = useState("");
@@ -6,6 +6,7 @@ const Colaborador = ({ colaboradores, setColaboradores }) => {
   // manejadores de evento
   const handleOnChangeNombre = (event) => setNombre(event.target.value);
   const handleOnChangeCorreo = (event) => setCorreo(event.target.value);
+
   const handleOnSubmit = (event) => {
     event.preventDefault();
     const nuevoColaborador = {
@@ -16,9 +17,22 @@ const Colaborador = ({ colaboradores, setColaboradores }) => {
     setColaboradores([...colaboradores, nuevoColaborador]);
     setNombre("");
     setCorreo("");
+    // guardar en localsctorage
+    localStorage.setItem('users', JSON.stringify([...colaboradores, nuevoColaborador]));
     document.getElementById("nombre").focus();
   };
 
+  // get localStorage
+  const getLocalStorage = ()=>{
+    const users = JSON.parse(localStorage.getItem('users'))
+    if (users){
+      setColaboradores(users)
+    }
+  }
+  useEffect(() => {
+    getLocalStorage()
+   }, [])
+  
   return (
     <div className="col-10 col-md-6 col-lg-4 mx-auto">
       <form
